@@ -1,0 +1,21 @@
+This is an example signal indicator for Linux cellular devices.
+
+I did not find such a simple icon for cellular networks but there were 
+several available for wifi.  Rather than take the time to adapt one I 
+decided it would be more simple to do it myself.
+
+A minimal amount was written in Python for the systray icon itself and the 
+rest was written with shell scripting.
+
+Instructions
+-----
+1. copy files into your home directory
+2. run bash component with: ./BASH_COMPONENT
+3. run python component with python PYTHON_COMPONENT.py
+
+Troubleshooting
+-----
+Icon does not show up at all - check required libraries
+signal bar does not match up with modemmanager readout - check permissions
+Strange icon shows up - check modemmanager operation
+

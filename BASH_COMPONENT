@@ -1,0 +1,42 @@
+#!/bin/bash
+
+#requires modem-manager
+#see SIGNAL_ICON.py for notes
+
+while true
+do
+
+if [ "$CELL_COUNTER" -gt 30 ]
+then
+CELL_COUNTER=0
+#query for signal - modemmanager
+RESULTANT_1=`mmcli -m 0 --simple-status | grep signal | cut -c29-30 | tr '\'\' ' '`
+#decide how many signal bars to signal for
+if [ "$RESULTANT_1" -gt 40 ]
+then
+echo 5 > /home/pi/SIGNAL_READOUT
+fi
+if [ "$RESULTANT_1" -le 40 ]
+then
+echo 4 > /home/pi/SIGNAL_READOUT
+fi
+if [ "$RESULTANT_1" -le 30 ]
+then
+echo 3 > /home/pi/SIGNAL_READOUT
+fi
+if [ "$RESULTANT_1" -le 20 ]
+then
+echo 2 > /home/pi/SIGNAL_READOUT
+fi
+if [ "$RESULTANT_1" -le 10 ]
+then
+echo 1 > /home/pi/SIGNAL_READOUT
+fi
+fi
+
+CELL_COUNTER=$(($CELL_COUNTER+1))
+
+sleep 1
+
+done
+
