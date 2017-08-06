@@ -14,23 +14,23 @@ RESULTANT_1=`mmcli -m 0 --simple-status | grep signal | cut -c29-30 | tr '\'\' '
 #decide how many signal bars to signal for
 if [ "$RESULTANT_1" -gt 40 ]
 then
-echo 5 > /home/pi/SIGNAL_READOUT
+echo 5 > ~/SIGNAL_READOUT
 fi
 if [ "$RESULTANT_1" -le 40 ]
 then
-echo 4 > /home/pi/SIGNAL_READOUT
+echo 4 > ~/SIGNAL_READOUT
 fi
 if [ "$RESULTANT_1" -le 30 ]
 then
-echo 3 > /home/pi/SIGNAL_READOUT
+echo 3 > ~/SIGNAL_READOUT
 fi
 if [ "$RESULTANT_1" -le 20 ]
 then
-echo 2 > /home/pi/SIGNAL_READOUT
+echo 2 > ~/SIGNAL_READOUT
 fi
 if [ "$RESULTANT_1" -le 10 ]
 then
-echo 1 > /home/pi/SIGNAL_READOUT
+echo 1 > ~/SIGNAL_READOUT
 fi
 fi
 

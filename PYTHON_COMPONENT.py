@@ -70,45 +70,45 @@ def icon_update():
 #this was most important-have to read after open-read one byte
         SIGNAL_MODE = SIGNAL_PRE.read(1)
         if SIGNAL_MODE < "1":
-            #print(message)  
-            GObject.idle_add(  
-            indicator.set_icon,   
-            "/home/pi/sample_icon.svg",
+            #print(message)
+            GObject.idle_add(
+            indicator.set_icon,
+            "~/sample_icon.svg",
             priority=GObject.PRIORITY_DEFAULT
             )
         if SIGNAL_MODE >= "1":
             #print(message)
             GObject.idle_add(
             indicator.set_icon,
-            "/home/pi/1_BARS.svg",
+            "~/1_BARS.svg",
             priority=GObject.PRIORITY_DEFAULT
             )
         if SIGNAL_MODE >= "2":
             #print(message)
             GObject.idle_add(
             indicator.set_icon,
-            "/home/pi/2_BARS.svg",
+            "~/2_BARS.svg",
             priority=GObject.PRIORITY_DEFAULT
             )
         if SIGNAL_MODE >= "3":
             #print(message)
             GObject.idle_add(
             indicator.set_icon,
-            "/home/pi/3_BARS.svg",
+            "~/3_BARS.svg",
             priority=GObject.PRIORITY_DEFAULT
             )
         if SIGNAL_MODE >= "4":
             #print(message)
             GObject.idle_add(
             indicator.set_icon,
-            "/home/pi/4_BARS.svg",
+            "~/4_BARS.svg",
             priority=GObject.PRIORITY_DEFAULT
             )
         if SIGNAL_MODE >= "5":
             #print(message)
             GObject.idle_add(
             indicator.set_icon,
-            "/home/pi/5_BARS.svg",
+            "~/5_BARS.svg",
             priority=GObject.PRIORITY_DEFAULT
             )
         time.sleep(3)
